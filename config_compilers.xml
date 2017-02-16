@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config_compilers version="2.0">
+  <compiler MACH="roo2">
+    <NETCDF_PATH>/usr/local</NETCDF_PATH>
+  </compiler>
+  <compiler MACH="roo2" COMPILER="gnu">
+    <PFUNIT_PATH>/usr/local/pfunit/pfunit-mpi</PFUNIT_PATH>
+  </compiler>
+</config_compilers>
