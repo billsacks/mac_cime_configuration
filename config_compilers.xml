@@ -4,6 +4,19 @@
     <NETCDF_PATH>/usr/local</NETCDF_PATH>
   </compiler>
   <compiler MACH="roo2" COMPILER="gnu">
+    <CFLAGS>
+      <base> -std=gnu99 </base>
+      <append compile_threaded="true"> -fopenmp </append>
+      <append DEBUG="TRUE"> -g -Wall </append>
+      <append DEBUG="FALSE"> -O </append>
+    </CFLAGS>
+    <FFLAGS>
+      <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
+      <append compile_threaded="true"> -fopenmp </append>
+      <append DEBUG="TRUE"> -g -Wall </append>
+      <append DEBUG="FALSE"> -O </append>
+    </FFLAGS>
+
     <PFUNIT_PATH>/usr/local/pfunit/pfunit-mpi</PFUNIT_PATH>
     <SFC>/usr/local/bin/gfortran</SFC>
     <SCC>/usr/local/bin/gcc</SCC>
