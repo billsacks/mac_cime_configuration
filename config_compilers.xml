@@ -5,5 +5,10 @@
   </compiler>
   <compiler MACH="roo2" COMPILER="gnu">
     <PFUNIT_PATH>/usr/local/pfunit/pfunit-mpi</PFUNIT_PATH>
+    <SFC>/usr/local/bin/gfortran</SFC>
+    <SCC>/usr/local/bin/gcc</SCC>
+    <MPIFC>/usr/local/bin/mpif90</MPIFC>
+    <MPICC>/usr/local/bin/mpicc</MPICC>
+    <SUPPORTS_CXX>FALSE</SUPPORTS_CXX>
   </compiler>
 </config_compilers>
