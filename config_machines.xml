@@ -82,10 +82,6 @@
     <mpirun mpilib="mpi-serial">
       <executable></executable>
     </mpirun>
-<!-- environment variables, a blank entry will unset a variable -->
-    <environment_variables>
-      <env name="OMP_STACKSIZE">256M</env>
-      <env name="MPI_TYPE_DEPTH">16</env>
-    </environment_variables>
+    <module_system type="none"/>
   </machine>
 </config_machines>
