@@ -10,7 +10,7 @@
 	<!-- NODENAME_REGEX: a regular expression used to identify this machine
 	  it must work on compute nodes as well as login nodes, use machine option
 	  to create_test or create_newcase if this flag is not available -->
-    <NODENAME_REGEX>*roo2*</NODENAME_REGEX>
+    <NODENAME_REGEX>roo2</NODENAME_REGEX>
 
     <!-- OS: the operating system of this machine. Passed to cppflags for
 	 compiled programs as -DVALUE  recognized are LINUX, AIX, Darwin, CNL -->
