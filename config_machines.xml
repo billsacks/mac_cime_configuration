@@ -69,10 +69,6 @@
 	 this machine, in practice the MPI tasks per node will not exceed this value -->
     <PES_PER_NODE>4</PES_PER_NODE>
 
-    <!-- PROJECT_REQUIRED: Does this machine require a project to be specified to
-	 the batch system?  See PROJECT above -->
-    <PROJECT_REQUIRED>FALSE</PROJECT_REQUIRED>
-
     <!-- mpirun: The mpi exec to start a job on this machine, supported values
 	 are values listed in MPILIBS above, default and mpi-serial -->
     <mpirun mpilib="default">
