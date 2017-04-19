@@ -18,7 +18,8 @@
       <append DEBUG="FALSE"> -O </append>
     </FFLAGS>
 
-    <PFUNIT_PATH>/usr/local/pfunit/pfunit3.2.8-serial</PFUNIT_PATH>
+    <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="false">/usr/local/pfunit/pfunit3.2.8-serial</PFUNIT_PATH>
+    <PFUNIT_PATH MPILIB="mpich" compile_threaded="true">/usr/local/pfunit/pfunit-mpi</PFUNIT_PATH>
     <SFC>/usr/local/bin/gfortran</SFC>
     <SCC>/usr/local/bin/gcc</SCC>
     <MPIFC>/usr/local/bin/mpif90</MPIFC>
