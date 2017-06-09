@@ -2,6 +2,9 @@
 <config_compilers version="2.0">
   <compiler MACH="roo2" COMPILER="gnu">
     <NETCDF_PATH>/usr/local</NETCDF_PATH>
+
+    <!-- These LDFLAGS are only needed for the unit test build; the system
+         build's Makefile automatically adds the necessary flags -->
     <LDFLAGS>
       <append> -L/usr/local/lib -lnetcdff -lnetcdf </append>
     </LDFLAGS>
