@@ -25,10 +25,7 @@
     <FFLAGS>
       <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
       <append compile_threaded="true"> -fopenmp </append>
-      <!-- It is important that 'invalid' appear first in the following
-           ffpe-trap list, because we have some Makefile string processing that
-           relies on finding the exact string '-ffpe-trap=invalid,' -->
-      <append DEBUG="TRUE"> -g -Wall -ffpe-trap=invalid,zero,overflow -fcheck=bounds </append>
+      <append DEBUG="TRUE"> -g -Wall -ffpe-trap=zero,overflow -fcheck=bounds </append>
       <append DEBUG="FALSE"> -O </append>
     </FFLAGS>
 
