@@ -19,13 +19,13 @@
     <CFLAGS>
       <base> -std=gnu99 </base>
       <append compile_threaded="true"> -fopenmp </append>
-      <append DEBUG="TRUE"> -g -Wall -ffpe-trap=invalid,zero,overflow -fcheck=bounds </append>
+      <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=invalid,zero,overflow -fcheck=bounds </append>
       <append DEBUG="FALSE"> -O </append>
     </CFLAGS>
     <FFLAGS>
       <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
       <append compile_threaded="true"> -fopenmp </append>
-      <append DEBUG="TRUE"> -g -Wall -ffpe-trap=zero,overflow -fcheck=bounds </append>
+      <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=zero,overflow -fcheck=bounds </append>
       <append DEBUG="FALSE"> -O </append>
     </FFLAGS>
 
