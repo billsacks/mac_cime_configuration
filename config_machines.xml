@@ -74,6 +74,10 @@
     <mpirun mpilib="default">
       <!-- name of the exectuable used to launch mpi jobs -->
       <executable>mpirun</executable>
+      <arguments>
+	<arg name="anum_tasks"> -np $TOTALPES</arg>
+	<arg name="labelstdout">-prepend-rank</arg>
+      </arguments>
     </mpirun>
     <mpirun mpilib="mpi-serial">
       <executable></executable>
