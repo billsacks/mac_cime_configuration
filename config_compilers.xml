@@ -3,10 +3,15 @@
   <compiler MACH="roo2" COMPILER="gnu">
     <NETCDF_PATH>/usr/local</NETCDF_PATH>
 
-    <!-- These LDFLAGS are only needed for the unit test build; the system
-         build's Makefile automatically adds the necessary flags -->
     <LDFLAGS>
+      <!-- These LDFLAGS are only needed for the unit test build; the
+           system build's Makefile automatically adds the necessary
+           flags -->
       <append> -L/usr/local/lib -lnetcdff -lnetcdf </append>
+
+      <!-- These LDFLAGS provide lapack and blas support on a Mac. This
+           may require installation of the Apple Developer Tools. -->
+      <append> -framework Accelerate </append>
     </LDFLAGS>
 
     <!-- We need to specify CFLAGS and FFLAGS in order to remove the
