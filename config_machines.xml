@@ -26,14 +26,14 @@
 
     <!-- CIME_OUTPUT_ROOT: Base directory for case output,
 	 the case/bld and case/run directories are written below here -->
-    <CIME_OUTPUT_ROOT>/Users/sacks/cime_output_root</CIME_OUTPUT_ROOT>
+    <CIME_OUTPUT_ROOT>$ENV{HOME}/projects/scratch</CIME_OUTPUT_ROOT>
 
     <!-- DIN_LOC_ROOT: location of the inputdata data directory
 	 inputdata is downloaded automatically on a case by case basis as
 	 long as the user has write access to this directory.   We recommend that
 	 all cime model users on a system share an inputdata directory
 	 as it can be quite large -->
-    <DIN_LOC_ROOT>/Users/sacks/cesm_inputdata</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT>$ENV{HOME}/projects/cesm-inputdata</DIN_LOC_ROOT>
 
     <!-- DOUT_S_ROOT: root directory of short term archive files, short term
       archiving moves model output data out of the run directory, but
@@ -41,10 +41,10 @@
     <DOUT_S_ROOT>$CIME_OUTPUT_ROOT/archive/$CASE</DOUT_S_ROOT>
 
     <!-- BASELINE_ROOT:  Root directory for system test baseline files -->
-    <BASELINE_ROOT>/Users/sacks/cesm_baselines</BASELINE_ROOT>
+    <BASELINE_ROOT>$ENV{HOME}/projects/baselines</BASELINE_ROOT>
 
     <!-- CCSM_CPRNC: location of the cprnc tool, compares model output in testing-->
-    <CCSM_CPRNC>/Users/sacks/cime/tools/cprnc/cprnc</CCSM_CPRNC>
+    <CCSM_CPRNC>$CIMEROOT/tools/cprnc/build/cprnc</CCSM_CPRNC>
 
     <!-- GMAKE: gnu compatible make tool, default is 'gmake' -->
     <GMAKE>make</GMAKE>
