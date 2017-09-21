@@ -7,4 +7,6 @@ following command, run from the top level of cime::
 
   scripts/fortran_unit_testing/run_tests.py --build-dir `mktemp -d ./unit_test_temp.XXXXXX`
 
-I suspect that more changes would be needed to run system tests.
+I have also tested the build of I compsets (CLM, MOSART, CISM).
+
+I have not yet tried actually running the model.
