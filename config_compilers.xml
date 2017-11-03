@@ -34,10 +34,9 @@
       <append DEBUG="FALSE"> -O </append>
     </FFLAGS>
 
-    <!-- At least one of the following is needed to run the Fortran unit tests;
-         these aren't needed to build and run CESM. -->
-    <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="false">/usr/local/pfunit/pfunit3.2.8-serial</PFUNIT_PATH>
-    <PFUNIT_PATH MPILIB="mpich" compile_threaded="true">/usr/local/pfunit/pfunit-mpi</PFUNIT_PATH>
+    <!-- This is needed to run the Fortran unit tests;
+         this aren't needed to build and run CESM. -->
+    <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="false">/usr/local/pfunit/pfunit3.2.9-serial-gfortran7.2</PFUNIT_PATH>
 
     <!-- The following paths aren't necessary on my machine because I have my
          PATH set so that the right compilers are picked up by default. But it
