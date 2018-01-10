@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config_compilers version="2.0">
-  <compiler MACH="roo2" COMPILER="gnu">
-    <NETCDF_PATH>/usr/local</NETCDF_PATH>
+<compiler MACH="roo2" COMPILER="gnu">
+  <NETCDF_PATH>/usr/local</NETCDF_PATH>
 
-    <LDFLAGS>
-      <!-- These LDFLAGS are only needed for the unit test build; the
-           system build's Makefile automatically adds the necessary
-           flags -->
-      <append> -L/usr/local/lib -lnetcdff -lnetcdf </append>
+  <LDFLAGS>
+    <!-- These LDFLAGS are only needed for the unit test build; the
+         system build's Makefile automatically adds the necessary
+         flags -->
+    <append> -L/usr/local/lib -lnetcdff -lnetcdf </append>
 
-      <!-- These LDFLAGS provide lapack and blas support on a Mac. This
-           may require installation of the Apple Developer Tools. -->
-      <append> -framework Accelerate </append>
-    </LDFLAGS>
+    <!-- These LDFLAGS provide lapack and blas support on a Mac. This
+         may require installation of the Apple Developer Tools. -->
+    <append> -framework Accelerate </append>
+  </LDFLAGS>
 
-    <!-- We need to specify CFLAGS and FFLAGS in order to remove the
-         '-mcmodel=medium' flag that is specified for the default gnu build. So
-         the 'base' settings below are the same as the default CESM gnu flags,
-         but without '-mcmodel=medium'. But it appears that if we just specify
-         <base>, then the system doesn't pick up the <append> flags from the
-         default config_compilers.xml. So we need to duplicate the 'append'
-         settings from the default config_compilers.xml here. -->
-    <CFLAGS>
-      <base> -std=gnu99 </base>
-      <append compile_threaded="true"> -fopenmp </append>
-      <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=invalid,zero,overflow -fcheck=bounds </append>
-      <append DEBUG="FALSE"> -O </append>
-    </CFLAGS>
-    <FFLAGS>
-      <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
-      <append compile_threaded="true"> -fopenmp </append>
-      <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=zero,overflow -fcheck=bounds </append>
-      <append DEBUG="FALSE"> -O </append>
-    </FFLAGS>
+  <!-- We need to specify CFLAGS and FFLAGS in order to remove the
+       '-mcmodel=medium' flag that is specified for the default gnu build. So
+       the 'base' settings below are the same as the default CESM gnu flags,
+       but without '-mcmodel=medium'. But it appears that if we just specify
+       <base>, then the system doesn't pick up the <append> flags from the
+       default config_compilers.xml. So we need to duplicate the 'append'
+       settings from the default config_compilers.xml here. -->
+  <CFLAGS>
+    <base> -std=gnu99 </base>
+    <append compile_threaded="true"> -fopenmp </append>
+    <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=invalid,zero,overflow -fcheck=bounds </append>
+    <append DEBUG="FALSE"> -O </append>
+  </CFLAGS>
+  <FFLAGS>
+    <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
+    <append compile_threaded="true"> -fopenmp </append>
+    <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=zero,overflow -fcheck=bounds </append>
+    <append DEBUG="FALSE"> -O </append>
+  </FFLAGS>
 
-    <!-- This is needed to run the Fortran unit tests;
-         this aren't needed to build and run CESM. -->
-    <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="false">/usr/local/pfunit/pfunit3.2.9-serial-gfortran7.2</PFUNIT_PATH>
+  <!-- This is needed to run the Fortran unit tests;
+       this aren't needed to build and run CESM. -->
+  <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="false">/usr/local/pfunit/pfunit3.2.9-serial-gfortran7.2</PFUNIT_PATH>
 
-    <!-- The following paths aren't necessary on my machine because I have my
-         PATH set so that the right compilers are picked up by default. But it
-         doesn't hurt to be explicit. -->
-    <SFC>/usr/local/bin/gfortran</SFC>
-    <SCC>/usr/local/bin/gcc</SCC>
-    <MPIFC>/usr/local/bin/mpif90</MPIFC>
-    <MPICC>/usr/local/bin/mpicc</MPICC>
+  <!-- The following paths aren't necessary on my machine because I have my
+       PATH set so that the right compilers are picked up by default. But it
+       doesn't hurt to be explicit. -->
+  <SFC>/usr/local/bin/gfortran</SFC>
+  <SCC>/usr/local/bin/gcc</SCC>
+  <MPIFC>/usr/local/bin/mpif90</MPIFC>
+  <MPICC>/usr/local/bin/mpicc</MPICC>
 
-    <!-- Simply because I haven't gone to the trouble of specifying a working
-         C++ compiler and testing whether C++ works. -->
-    <SUPPORTS_CXX>FALSE</SUPPORTS_CXX>
-  </compiler>
-</config_compilers>
+  <!-- Simply because I haven't gone to the trouble of specifying a working
+       C++ compiler and testing whether C++ works. -->
+  <SUPPORTS_CXX>FALSE</SUPPORTS_CXX>
+</compiler>
