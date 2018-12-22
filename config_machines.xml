@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!-- This is an ordered list, not all fields are required, optional fields are noted below. -->
 <!-- MACH is the name that you will use in machine options -->
-<machine MACH="roo2">
+<machine MACH="bishorn">
 
   <!-- DESC: a text description of the machine, this field is current not used in code-->
-  <DESC>roo2</DESC>
+  <DESC>bishorn</DESC>
 
   <!-- NODENAME_REGEX: a regular expression used to identify this machine
        it must work on compute nodes as well as login nodes, use machine option
        to create_test or create_newcase if this flag is not available -->
-  <NODENAME_REGEX>roo2</NODENAME_REGEX>
+  <NODENAME_REGEX>cgdm-bishorn</NODENAME_REGEX>
 
   <!-- OS: the operating system of this machine. Passed to cppflags for
        compiled programs as -DVALUE  recognized are LINUX, AIX, Darwin, CNL -->
