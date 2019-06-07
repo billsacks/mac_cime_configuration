@@ -9,7 +9,7 @@ following command, run from the top level of cime::
 
 I have also tested the build of I compsets (CLM, MOSART, CISM), and running this test::
 
-  SMS_D_Ld3.f10_f10_musgs.I2000Clm50BgcCropQianGs.bishorn_gnu.clm-default
+  SMS_D_Ld3_P4x1.f10_f10_musgs.I2000Clm50BgcCropQianGs.bishorn_gnu.clm-default
 
 Note that, in order to get the job to launch, I needed to add the following line in
 /etc/hosts::
