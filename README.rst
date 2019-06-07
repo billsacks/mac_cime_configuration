@@ -7,9 +7,8 @@ following command, run from the top level of cime::
 
   scripts/fortran_unit_testing/run_tests.py --build-dir `mktemp -d ./unit_test_temp.XXXXXX`
 
-I have also tested the build of I compsets (CLM, MOSART, CISM), and running this test::
-
-  SMS_D_Ld3_P4x1.f10_f10_musgs.I2000Clm50BgcCropQianGs.bishorn_gnu.clm-default
+I have also tested the build of I compsets (CLM, MOSART, CISM), and running I compsets
+with CLM and MOSART (but SGLC rather than CISM).
 
 Note that, in order to get the job to launch, I needed to add the following line in
 /etc/hosts::
@@ -20,6 +19,11 @@ Note that, in order to get the job to launch, I needed to add the following line
 without this line, I got an error that looked like: ``[0]
 MPID_nem_tcp_init(384).............: gethostbyname failed, cgdm-bishorn (errno 1)``).
 
-Also note that running even this fairly minimal-data compset at this coarse resolution
+Here is a good test to run, which takes about 30 seconds to run (not counting build
+time)::
+
+  SMS_D_Ld1_P4x1.f10_f10_musgs.I2000Clm50BgcCropQianRsGs.bishorn_gnu.clm-default
+
+(Note that running even this fairly minimal-data compset at this coarse resolution
 requires downloading about 45 GB of data (mostly for datm forcings). Simply building the
-model does *not* require downloading these data.
+model does *not* require downloading these data.)
