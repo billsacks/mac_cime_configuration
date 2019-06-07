@@ -8,7 +8,8 @@ following command, run from the top level of cime::
   scripts/fortran_unit_testing/run_tests.py --build-dir `mktemp -d ./unit_test_temp.XXXXXX`
 
 I have also tested the build of I compsets (CLM, MOSART, CISM), and running I compsets
-with CLM and MOSART (but SGLC rather than CISM).
+with CLM and MOSART (but so far I have only used SGLC rather than CISM in the tests that I
+have run).
 
 Note that, in order to get the job to launch, I needed to add the following line in
 /etc/hosts::
