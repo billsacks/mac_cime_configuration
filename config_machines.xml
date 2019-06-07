@@ -43,7 +43,7 @@
   <BASELINE_ROOT>$ENV{HOME}/projects/baselines</BASELINE_ROOT>
 
   <!-- CCSM_CPRNC: location of the cprnc tool, compares model output in testing-->
-  <CCSM_CPRNC>$CIMEROOT/tools/cprnc/build/cprnc</CCSM_CPRNC>
+  <CCSM_CPRNC>/Users/sacks/projects/cesm-tools/cime/tools/cprnc/cprnc</CCSM_CPRNC>
 
   <!-- GMAKE: gnu compatible make tool, default is 'gmake' -->
   <GMAKE>make</GMAKE>
