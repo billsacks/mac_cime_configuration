@@ -19,3 +19,7 @@ Note that, in order to get the job to launch, I needed to add the following line
 (where ``cgdm-bishorn`` is my machine's name, e.g., obtained via running ``hostname``;
 without this line, I got an error that looked like: ``[0]
 MPID_nem_tcp_init(384).............: gethostbyname failed, cgdm-bishorn (errno 1)``).
+
+Also note that running even this fairly minimal-data compset at this coarse resolution
+requires downloading about 45 GB of data (mostly for datm forcings). Simply building the
+model does *not* require downloading these data.
