@@ -34,7 +34,7 @@
   </FFLAGS>
 
   <!-- This is needed to run the Fortran unit tests;
-       this aren't needed to build and run CESM. -->
+       this isn't needed to build and run CESM. -->
   <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="false">/usr/local/pfunit/pfunit3.2.9-serial-gfortran8.2.0</PFUNIT_PATH>
 
   <!-- The following paths aren't necessary on my machine because I have my
