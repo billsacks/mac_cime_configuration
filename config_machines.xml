@@ -46,7 +46,7 @@
   <CCSM_CPRNC>/Users/sacks/projects/cesm-tools/cime/tools/cprnc/cprnc</CCSM_CPRNC>
 
   <!-- GMAKE: gnu compatible make tool, default is 'gmake' -->
-  <GMAKE>make</GMAKE>
+  <GMAKE>gmake</GMAKE>
 
   <!-- GMAKE_J: optional number of threads to pass to the gmake flag -->
   <GMAKE_J>8</GMAKE_J>
