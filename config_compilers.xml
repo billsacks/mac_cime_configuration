@@ -27,7 +27,7 @@
     <append DEBUG="FALSE"> -O </append>
   </CFLAGS>
   <FFLAGS>
-    <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
+    <base> -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none -fallow-argument-mismatch -fallow-invalid-boz </base>
     <append compile_threaded="TRUE"> -fopenmp </append>
     <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=zero,overflow -fcheck=bounds </append>
     <append DEBUG="FALSE"> -O </append>
@@ -41,8 +41,8 @@
        PATH set so that the right compilers are picked up by default. But it
        doesn't hurt to be explicit. -->
   <SFC>/usr/local/bin/gfortran</SFC>
-  <SCC>/usr/local/bin/gcc-8</SCC>
-  <SCXX>/usr/local/bin/g++-8</SCXX>
+  <SCC>/usr/local/bin/gcc-10</SCC>
+  <SCXX>/usr/local/bin/g++-10</SCXX>
   <MPIFC>/usr/local/bin/mpif90</MPIFC>
   <MPICC>/usr/local/bin/mpicc</MPICC>
   <MPICXX>/usr/local/bin/mpic++</MPICXX>
