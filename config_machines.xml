@@ -80,6 +80,6 @@
   </mpirun>
   <module_system type="none"/>
   <environment_variables comp_interface="nuopc">
-    <env name="ESMFMKFILE">/Users/sacks/ESMF/esmf8.2.0b18/lib/libO/Darwin.gfortranclang.64.mpich3.default/esmf.mk</env>
+    <env name="ESMFMKFILE">/Users/sacks/ESMF/esmf8.2.0/lib/libO/Darwin.gfortranclang.64.mpich3.default/esmf.mk</env>
   </environment_variables>
 </machine>
