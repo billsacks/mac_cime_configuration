@@ -21,7 +21,7 @@
 
   <!-- MPILIBS: mpilibs supported on this machine, comma seperated list,
        first is default, mpi-serial is assumed and not required in this list-->
-  <MPILIBS>mpich</MPILIBS>
+  <MPILIBS>openmpi</MPILIBS>
 
   <!-- CIME_OUTPUT_ROOT: Base directory for case output,
        the case/bld and case/run directories are written below here -->
@@ -71,8 +71,8 @@
     <!-- name of the exectuable used to launch mpi jobs -->
     <executable>mpirun</executable>
     <arguments>
-      <arg name="anum_tasks"> -np $TOTALPES</arg>
-      <arg name="labelstdout">-prepend-rank</arg>
+      <arg name="anum_tasks"> -np $TOTALPES </arg>
+      <arg name="labelstdout"> --tag-output </arg>
     </arguments>
   </mpirun>
   <mpirun mpilib="mpi-serial">
