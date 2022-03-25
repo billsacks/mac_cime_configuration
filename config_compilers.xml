@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- NOTE(wjs, 2021-12-06) This file is needed for older versions of
-     cime, and also to run the pFUnit unit test build even with newer
-     versions of cime: see https://github.com/ESMCI/cime/issues/4136 .
-
-     I should remove this file once I am exclusively using newer
-     versions of cime and it is no longer needed for the pFUnit unit
-     test build. -->
+<!-- NOTE(wjs, 2022-03-24) This file is needed for older versions of
+     cime. I should remove this file once I am exclusively using newer
+     versions of cime. -->
 
 <compiler MACH="bishorn" COMPILER="gnu">
   <NETCDF_PATH>/usr/local</NETCDF_PATH>
