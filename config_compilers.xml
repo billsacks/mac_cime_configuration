@@ -4,13 +4,13 @@
      versions of cime. -->
 
 <compiler MACH="bishorn" COMPILER="gnu">
-  <NETCDF_PATH>/usr/local</NETCDF_PATH>
+  <NETCDF_PATH>/opt/homebrew</NETCDF_PATH>
 
   <LDFLAGS>
     <!-- These LDFLAGS are only needed for the unit test build; the
          system build's Makefile automatically adds the necessary
          flags -->
-    <append> -L/usr/local/lib -lnetcdff -lnetcdf </append>
+    <append> -L/opt/homebrew/lib -lnetcdff -lnetcdf </append>
 
     <!-- These LDFLAGS provide lapack and blas support on a Mac. This
          may require installation of the Apple Developer Tools. -->
@@ -39,17 +39,20 @@
 
   <!-- This is needed to run the Fortran unit tests;
        this isn't needed to build and run CESM. -->
-  <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="FALSE">/usr/local/pfunit/pfunit3.2.9-serial-gfortran8.2.0</PFUNIT_PATH>
+  <PFUNIT_PATH MPILIB="mpi-serial" compile_threaded="FALSE">/usr/local/pfunit/pfunit3.3.3-serial-gfortran11.3.0</PFUNIT_PATH>
 
-  <!-- The following paths aren't necessary on my machine because I have my
-       PATH set so that the right compilers are picked up by default. But it
-       doesn't hurt to be explicit. -->
-  <SFC>/usr/local/bin/gfortran</SFC>
-  <SCC>/usr/local/bin/gcc</SCC>
-  <SCXX>/usr/local/bin/g++</SCXX>
-  <MPIFC>/usr/local/bin/mpif90</MPIFC>
-  <MPICC>/usr/local/bin/mpicc</MPICC>
-  <MPICXX>/usr/local/bin/mpic++</MPICXX>
+  <!-- The following paths aren't necessary on my machine because I have
+       my PATH set so that the right compilers are picked up by default.
+       But it doesn't hurt to be explicit. However, explicit paths ARE
+       needed here for gcc and g++, since we use the homebrew-installed
+       ones (which have version numbers) rather than the default ones
+       that point to clang. -->
+  <SFC>/opt/homebrew/bin/gfortran</SFC>
+  <SCC>/opt/homebrew/bin/gcc-11</SCC>
+  <SCXX>/opt/homebrew/bin/g++-11</SCXX>
+  <MPIFC>/opt/homebrew/bin/mpif90</MPIFC>
+  <MPICC>/opt/homebrew/bin/mpicc</MPICC>
+  <MPICXX>/opt/homebrew/bin/mpic++</MPICXX>
 
   <SUPPORTS_CXX>TRUE</SUPPORTS_CXX>
 </compiler>

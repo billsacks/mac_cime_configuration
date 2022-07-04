@@ -1,4 +1,4 @@
-set(NETCDF_PATH "/usr/local")
+set(NETCDF_PATH "/opt/homebrew")
 
 # These LDFLAGS provide lapack and blas support on a Mac. This may require installation of
 # the Apple Developer Tools.
@@ -7,14 +7,17 @@ string(APPEND LDFLAGS " -framework Accelerate")
 # This is needed to run the Fortran unit tests;
 # this isn't needed to build and run CESM.
 if (MPILIB STREQUAL mpi-serial AND NOT compile_threaded)
-  set(PFUNIT_PATH "/usr/local/pfunit/pfunit3.2.9-serial-gfortran8.2.0")
+  set(PFUNIT_PATH "/usr/local/pfunit/pfunit3.3.3-serial-gfortran11.3.0")
 endif()
 
-# The following paths aren't necessary on my machine because I have my PATH set so that
-# the right compilers are picked up by default. But it doesn't hurt to be explicit.
-set(SFC "/usr/local/bin/gfortran")
-set(SCC "/usr/local/bin/gcc")
-set(SCXX "/usr/local/bin/g++")
-set(MPIFC "/usr/local/bin/mpif90")
-set(MPICC "/usr/local/bin/mpicc")
-set(MPICXX "/usr/local/bin/mpic++")
+# Most of the following paths aren't necessary on my machine because I have my PATH set so
+# that the right compilers are picked up by default. But it doesn't hurt to be explicit.
+# However, explicit paths ARE needed here for gcc and g++, since we use the
+# homebrew-installed ones (which have version numbers) rather than the default ones that
+# point to clang.
+set(SFC "/opt/homebrew/bin/gfortran")
+set(SCC "/opt/homebrew/bin/gcc-11")
+set(SCXX "/opt/homebrew/bin/g++-11")
+set(MPIFC "/opt/homebrew/bin/mpif90")
+set(MPICC "/opt/homebrew/bin/mpicc")
+set(MPICXX "/opt/homebrew/bin/mpic++")

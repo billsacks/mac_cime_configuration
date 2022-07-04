@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!-- This is an ordered list, not all fields are required, optional fields are noted below. -->
 <!-- MACH is the name that you will use in machine options -->
-<machine MACH="bishorn">
+<machine MACH="cgdm-green">
 
   <!-- DESC: a text description of the machine, this field is current not used in code-->
-  <DESC>bishorn</DESC>
+  <DESC>cgdm-green</DESC>
 
   <!-- NODENAME_REGEX: a regular expression used to identify this machine
        it must work on compute nodes as well as login nodes, use machine option
        to create_test or create_newcase if this flag is not available -->
-  <NODENAME_REGEX>cgdm-bishorn</NODENAME_REGEX>
+  <NODENAME_REGEX>cgdm-green</NODENAME_REGEX>
 
   <!-- OS: the operating system of this machine. Passed to cppflags for
        compiled programs as -DVALUE  recognized are LINUX, AIX, Darwin, CNL -->
@@ -59,11 +59,11 @@
   <!-- MAX_TASKS_PER_NODE: maximum number of threads*tasks per
        shared memory node on this machine,
        should always be >= MAX_MPITASKS_PER_NODE -->
-  <MAX_TASKS_PER_NODE>4</MAX_TASKS_PER_NODE>
+  <MAX_TASKS_PER_NODE>8</MAX_TASKS_PER_NODE>
 
   <!-- MAX_MPITASKS_PER_NODE: number of physical PES per shared node on
        this machine, in practice the MPI tasks per node will not exceed this value -->
-  <MAX_MPITASKS_PER_NODE>4</MAX_MPITASKS_PER_NODE>
+  <MAX_MPITASKS_PER_NODE>8</MAX_MPITASKS_PER_NODE>
 
   <!-- mpirun: The mpi exec to start a job on this machine, supported values
        are values listed in MPILIBS above, default and mpi-serial -->
@@ -80,6 +80,6 @@
   </mpirun>
   <module_system type="none"/>
   <environment_variables comp_interface="nuopc">
-    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmf8.2.0/lib/libO/Darwin.gfortran.64.openmpi.default/esmf.mk</env>
+    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmf8.3.0g_gcc/lib/libg/Darwin.gfortran.32.openmpi.default/esmf.mk</env>
   </environment_variables>
 </machine>
