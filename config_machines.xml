@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!-- This is an ordered list, not all fields are required, optional fields are noted below. -->
 <!-- MACH is the name that you will use in machine options -->
-<machine MACH="cgdm-green">
+<machine MACH="green">
 
   <!-- DESC: a text description of the machine, this field is current not used in code-->
-  <DESC>cgdm-green</DESC>
+  <DESC>green</DESC>
 
   <!-- NODENAME_REGEX: a regular expression used to identify this machine
        it must work on compute nodes as well as login nodes, use machine option
