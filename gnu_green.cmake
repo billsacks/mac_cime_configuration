@@ -16,8 +16,8 @@ endif()
 # homebrew-installed ones (which have version numbers) rather than the default ones that
 # point to clang.
 set(SFC "/opt/homebrew/bin/gfortran")
-set(SCC "/opt/homebrew/bin/gcc-11")
-set(SCXX "/opt/homebrew/bin/g++-11")
+set(SCC "/opt/homebrew/bin/gcc-12")
+set(SCXX "/opt/homebrew/bin/g++-12")
 set(MPIFC "/opt/homebrew/bin/mpif90")
 set(MPICC "/opt/homebrew/bin/mpicc")
 set(MPICXX "/opt/homebrew/bin/mpic++")

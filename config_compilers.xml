@@ -48,8 +48,8 @@
        ones (which have version numbers) rather than the default ones
        that point to clang. -->
   <SFC>/opt/homebrew/bin/gfortran</SFC>
-  <SCC>/opt/homebrew/bin/gcc-11</SCC>
-  <SCXX>/opt/homebrew/bin/g++-11</SCXX>
+  <SCC>/opt/homebrew/bin/gcc-12</SCC>
+  <SCXX>/opt/homebrew/bin/g++-12</SCXX>
   <MPIFC>/opt/homebrew/bin/mpif90</MPIFC>
   <MPICC>/opt/homebrew/bin/mpicc</MPICC>
   <MPICXX>/opt/homebrew/bin/mpic++</MPICXX>
