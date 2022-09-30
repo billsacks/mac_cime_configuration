@@ -4,6 +4,10 @@ set(NETCDF_PATH "/opt/homebrew")
 # the Apple Developer Tools.
 string(APPEND LDFLAGS " -framework Accelerate")
 
+# Trying to produce a backtrace leads to a hang, so don't even try
+string(APPEND CFLAGS " -fno-backtrace")
+string(APPEND FFLAGS " -fno-backtrace")
+
 # This is needed to run the Fortran unit tests;
 # this isn't needed to build and run CESM.
 if (MPILIB STREQUAL mpi-serial AND NOT compile_threaded)
