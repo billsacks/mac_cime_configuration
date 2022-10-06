@@ -21,7 +21,7 @@
 
   <!-- MPILIBS: mpilibs supported on this machine, comma seperated list,
        first is default, mpi-serial is assumed and not required in this list-->
-  <MPILIBS>openmpi</MPILIBS>
+  <MPILIBS>mpich</MPILIBS>
 
   <!-- CIME_OUTPUT_ROOT: Base directory for case output,
        the case/bld and case/run directories are written below here -->
@@ -72,7 +72,7 @@
     <executable>mpirun</executable>
     <arguments>
       <arg name="anum_tasks"> -np $TOTALPES </arg>
-      <arg name="labelstdout"> --tag-output </arg>
+      <arg name="labelstdout"> -prepend-rank </arg>
     </arguments>
   </mpirun>
   <mpirun mpilib="mpi-serial">
@@ -80,6 +80,6 @@
   </mpirun>
   <module_system type="none"/>
   <environment_variables comp_interface="nuopc">
-    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.4.0b13-42-ga40d1c0409/lib/libg/Darwin.gfortranclang.64.openmpi.default/esmf.mk</env>
+    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.4.0b17-21-g19b55f12ad_mpich/lib/libg/Darwin.gfortranclang.64.mpich.default/esmf.mk</env>
   </environment_variables>
 </machine>
