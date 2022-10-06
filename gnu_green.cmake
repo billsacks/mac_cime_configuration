@@ -1,4 +1,5 @@
-set(NETCDF_PATH "/opt/homebrew/opt/netcdf")
+set(NETCDF_C_PATH "/opt/homebrew/opt/netcdf")
+set(NETCDF_FORTRAN_PATH "/opt/homebrew/opt/netcdf-fortran")
 
 # These LDFLAGS provide lapack and blas support on a Mac. This may require installation of
 # the Apple Developer Tools.
