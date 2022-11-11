@@ -17,12 +17,9 @@ endif()
 
 # Most of the following paths aren't necessary on my machine because I have my PATH set so
 # that the right compilers are picked up by default. But it doesn't hurt to be explicit.
-# However, explicit paths ARE needed here for gcc and g++, since we use the
-# homebrew-installed ones (which have version numbers) rather than the default ones that
-# point to clang.
 set(SFC "/opt/homebrew/bin/gfortran")
-set(SCC "/opt/homebrew/bin/gcc-12")
-set(SCXX "/opt/homebrew/bin/g++-12")
+set(SCC "/usr/bin/gcc")
+set(SCXX "/usr/bin/g++")
 set(MPIFC "/opt/homebrew/bin/mpif90")
 set(MPICC "/opt/homebrew/bin/mpicc")
 set(MPICXX "/opt/homebrew/bin/mpic++")
