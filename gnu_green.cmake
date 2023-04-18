@@ -5,6 +5,9 @@ set(NETCDF_FORTRAN_PATH "/opt/homebrew/opt/netcdf-fortran")
 # the Apple Developer Tools.
 string(APPEND LDFLAGS " -framework Accelerate")
 
+# This is only needed for the unit test build of the share and/or cpl7 code
+string(APPEND LDFLAGS " -L/opt/homebrew/lib -lnetcdff -lnetcdf")
+
 # Trying to produce a backtrace leads to a hang, so don't even try
 string(APPEND CFLAGS " -fno-backtrace -Wno-error=implicit-function-declaration")
 string(APPEND FFLAGS " -fno-backtrace -fallow-argument-mismatch")
