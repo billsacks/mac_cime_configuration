@@ -6,8 +6,8 @@ set(NETCDF_FORTRAN_PATH "/opt/homebrew/opt/netcdf-fortran")
 string(APPEND LDFLAGS " -framework Accelerate")
 
 # Trying to produce a backtrace leads to a hang, so don't even try
-string(APPEND CFLAGS " -fno-backtrace")
-string(APPEND FFLAGS " -fno-backtrace")
+string(APPEND CFLAGS " -fno-backtrace -Wno-error=implicit-function-declaration")
+string(APPEND FFLAGS " -fno-backtrace -fallow-argument-mismatch")
 
 # This is needed to run the Fortran unit tests;
 # this isn't needed to build and run CESM.
