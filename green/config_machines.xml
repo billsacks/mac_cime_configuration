@@ -73,8 +73,18 @@
   <mpirun mpilib="mpi-serial">
     <executable></executable>
   </mpirun>
-  <module_system type="none"/>
-  <environment_variables comp_interface="nuopc">
-    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.4.0b17-21-g19b55f12ad_openmpi/lib/libg/Darwin.gfortranclang.64.openmpi.default/esmf.mk</env>
+  <module_system type="none" />
+
+  <environment_variables mpilib="!mpi-serial">
+    <env name="PIO">/Users/sacks/pio_builds/pio2_6_5</env>
+    <env name="PIO_LIBDIR">/Users/sacks/pio_builds/pio2_6_5/lib</env>
+    <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5/include</env>
+    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_openmpi/install_dir/lib/libg/Darwin.gfortranclang.64.openmpi.default/esmf.mk</env>
+  </environment_variables>
+  <environment_variables mpilib="mpi-serial">
+    <env name="PIO">/Users/sacks/pio_builds/pio2_6_5_mpiserial</env>
+    <env name="PIO_LIBDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/lib</env>
+    <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/include</env>
+    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_mpiuni/install_dir/lib/libg/Darwin.gfortranclang.64.mpiuni.default/esmf.mk</env>
   </environment_variables>
 </machine>

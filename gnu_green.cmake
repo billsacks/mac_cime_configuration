@@ -18,7 +18,7 @@ string(APPEND FFLAGS " -fno-backtrace -fallow-argument-mismatch")
 # This is needed to run the Fortran unit tests;
 # this isn't needed to build and run CESM.
 if (MPILIB STREQUAL mpi-serial AND NOT compile_threaded)
-  set(PFUNIT_PATH "/usr/local/pfunit/pfunit4.6.3-gfortran12.2.0")
+  set(PFUNIT_PATH "/Users/sacks/pfunit_builds/pfunit4.11.1-gfortran14.2.0/install")
 endif()
 
 # Most of the following paths aren't necessary on my machine because I have my PATH set so
