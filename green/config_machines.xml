@@ -89,6 +89,8 @@
     <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5/include</env>
 
     <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_openmpi/install_dir/lib/libg/Darwin.gfortranclang.64.openmpi.default/esmf.mk</env>
+    <!-- This is leveraged by the share unit tests -->
+    <env name="ESMF_ROOT">/Users/sacks/esmf_builds/esmfv8.8.0_openmpi/install_dir</env>
   </environment_variables>
   <environment_variables mpilib="mpi-serial">
     <!-- The following variables are needed in order to use a pre-built PIO (which is the
@@ -104,5 +106,7 @@
     <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/include</env>
 
     <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_mpiuni/install_dir/lib/libg/Darwin.gfortranclang.64.mpiuni.default/esmf.mk</env>
+    <!-- This is leveraged by the share unit tests -->
+    <env name="ESMF_ROOT">/Users/sacks/esmf_builds/esmfv8.8.0_mpiuni/install_dir</env>
   </environment_variables>
 </machine>
