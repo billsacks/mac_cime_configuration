@@ -87,6 +87,8 @@
     <env name="PIO_TYPENAME_VALID_VALUES">netcdf,netcdf4c</env>
     <env name="PIO_LIBDIR">/Users/sacks/pio_builds/pio2_6_5/lib</env>
     <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5/include</env>
+    <!-- This is used in the unit test build -->
+    <env name="PIO_ROOT">/Users/sacks/pio_builds/pio2_6_5</env>
 
     <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_openmpi/install_dir/lib/libg/Darwin.gfortranclang.64.openmpi.default/esmf.mk</env>
     <!-- This is leveraged by the share unit tests -->
@@ -104,6 +106,8 @@
     <env name="PIO_TYPENAME_VALID_VALUES">netcdf,netcdf4c</env>
     <env name="PIO_LIBDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/lib</env>
     <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/include</env>
+    <!-- This is used in the unit test build -->
+    <env name="PIO_ROOT">/Users/sacks/pio_builds/pio2_6_5_mpiserial</env>
 
     <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_mpiuni/install_dir/lib/libg/Darwin.gfortranclang.64.mpiuni.default/esmf.mk</env>
     <!-- This is leveraged by the share unit tests -->
