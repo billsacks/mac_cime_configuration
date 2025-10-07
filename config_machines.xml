@@ -1,7 +1,116 @@
 <?xml version="1.0"?>
+<!-- This is an ordered list, not all fields are required, optional fields are noted below. -->
+<!-- MACH is the name that you will use in machine options -->
+<machine MACH="green">
 
-<config_machines version="3.0">
-	<NODENAME_REGEX>
-		<value MACH="green">cgdm-green</value>
-	</NODENAME_REGEX>
-</config_machines>
+  <!-- DESC: a text description of the machine, this field is current not used in code-->
+  <DESC>green</DESC>
+
+  <!-- OS: the operating system of this machine. Passed to cppflags for
+       compiled programs as -DVALUE  recognized are LINUX, AIX, Darwin, CNL -->
+  <OS>Darwin</OS>
+
+  <!-- COMPILERS: compilers supported on this machine, comma seperated list, first is default -->
+
+  <COMPILERS>gnu</COMPILERS>
+
+  <!-- MPILIBS: mpilibs supported on this machine, comma seperated list,
+       first is default, mpi-serial is assumed and not required in this list-->
+  <MPILIBS>openmpi</MPILIBS>
+
+  <!-- CIME_OUTPUT_ROOT: Base directory for case output,
+       the case/bld and case/run directories are written below here -->
+  <CIME_OUTPUT_ROOT>$ENV{HOME}/projects/scratch</CIME_OUTPUT_ROOT>
+
+  <!-- DIN_LOC_ROOT: location of the inputdata data directory
+       inputdata is downloaded automatically on a case by case basis as
+       long as the user has write access to this directory.   We recommend that
+       all cime model users on a system share an inputdata directory
+       as it can be quite large -->
+  <DIN_LOC_ROOT>$ENV{HOME}/projects/cesm-inputdata</DIN_LOC_ROOT>
+
+  <!-- DOUT_S_ROOT: root directory of short term archive files, short term
+       archiving moves model output data out of the run directory, but
+       keeps it on disk-->
+  <DOUT_S_ROOT>$CIME_OUTPUT_ROOT/archive/$CASE</DOUT_S_ROOT>
+
+  <!-- BASELINE_ROOT:  Root directory for system test baseline files -->
+  <BASELINE_ROOT>$ENV{HOME}/projects/baselines</BASELINE_ROOT>
+
+  <!-- GMAKE: gnu compatible make tool, default is 'gmake' -->
+  <GMAKE>gmake</GMAKE>
+
+  <!-- GMAKE_J: optional number of threads to pass to the gmake flag -->
+  <GMAKE_J>8</GMAKE_J>
+
+  <!-- BATCH_SYSTEM: batch system used on this machine,
+       supported values are: none, cobalt, lsf, pbs, slurm -->
+  <BATCH_SYSTEM>none</BATCH_SYSTEM>
+
+  <!-- SUPPORTED_BY: contact information for support for this system
+       this field is not used in code -->
+  <SUPPORTED_BY>Bill Sacks</SUPPORTED_BY>
+
+  <!-- MAX_TASKS_PER_NODE: maximum number of threads*tasks per
+       shared memory node on this machine,
+       should always be >= MAX_MPITASKS_PER_NODE -->
+  <MAX_TASKS_PER_NODE>8</MAX_TASKS_PER_NODE>
+
+  <!-- MAX_MPITASKS_PER_NODE: number of physical PES per shared node on
+       this machine, in practice the MPI tasks per node will not exceed this value -->
+  <MAX_MPITASKS_PER_NODE>8</MAX_MPITASKS_PER_NODE>
+
+  <!-- mpirun: The mpi exec to start a job on this machine, supported values
+       are values listed in MPILIBS above, default and mpi-serial -->
+  <mpirun mpilib="default">
+    <!-- name of the exectuable used to launch mpi jobs -->
+    <executable>mpirun</executable>
+    <arguments>
+      <arg name="anum_tasks"> -np $TOTALPES </arg>
+      <arg name="labelstdout"> --tag-output </arg>
+    </arguments>
+  </mpirun>
+  <mpirun mpilib="mpi-serial">
+    <executable></executable>
+  </mpirun>
+  <module_system type="none" />
+
+  <environment_variables mpilib="!mpi-serial">
+    <!-- The following variables are needed in order to use a pre-built PIO (which is the
+    recommendation now, though may not actually be needed) -->
+    <env name="PIO">/Users/sacks/pio_builds/pio2_6_5</env>
+    <env name="PIO_VERSION_MAJOR">2</env>
+    <!-- I'm not sure if it's right to include netcdf4c here (I *think* it's
+    netcdf4-compressed, which I'm taking to mean the same as just regular netcdf4); note
+    that I'm deliberately excluding netcdfp4 (parallel NetCDF) and pnetcdf, which are not
+    supported on my system. -->
+    <env name="PIO_TYPENAME_VALID_VALUES">netcdf,netcdf4c</env>
+    <env name="PIO_LIBDIR">/Users/sacks/pio_builds/pio2_6_5/lib</env>
+    <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5/include</env>
+    <!-- This is used in the unit test build -->
+    <env name="PIO_ROOT">/Users/sacks/pio_builds/pio2_6_5</env>
+
+    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_openmpi/install_dir/lib/libg/Darwin.gfortranclang.64.openmpi.default/esmf.mk</env>
+    <!-- This is leveraged by the share unit tests -->
+    <env name="ESMF_ROOT">/Users/sacks/esmf_builds/esmfv8.8.0_openmpi/install_dir</env>
+  </environment_variables>
+  <environment_variables mpilib="mpi-serial">
+    <!-- The following variables are needed in order to use a pre-built PIO (which is the
+    recommendation now, though may not actually be needed) -->
+    <env name="PIO">/Users/sacks/pio_builds/pio2_6_5_mpiserial</env>
+    <env name="PIO_VERSION_MAJOR">2</env>
+    <!-- I'm not sure if it's right to include netcdf4c here (I *think* it's
+    netcdf4-compressed, which I'm taking to mean the same as just regular netcdf4); note
+    that I'm deliberately excluding netcdfp4 (parallel NetCDF) and pnetcdf, which are not
+    supported on my system. -->
+    <env name="PIO_TYPENAME_VALID_VALUES">netcdf,netcdf4c</env>
+    <env name="PIO_LIBDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/lib</env>
+    <env name="PIO_INCDIR">/Users/sacks/pio_builds/pio2_6_5_mpiserial/include</env>
+    <!-- This is used in the unit test build -->
+    <env name="PIO_ROOT">/Users/sacks/pio_builds/pio2_6_5_mpiserial</env>
+
+    <env name="ESMFMKFILE">/Users/sacks/esmf_builds/esmfv8.8.0_mpiuni/install_dir/lib/libg/Darwin.gfortranclang.64.mpiuni.default/esmf.mk</env>
+    <!-- This is leveraged by the share unit tests -->
+    <env name="ESMF_ROOT">/Users/sacks/esmf_builds/esmfv8.8.0_mpiuni/install_dir</env>
+  </environment_variables>
+</machine>
