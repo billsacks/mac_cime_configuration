@@ -37,6 +37,8 @@
   <!-- BASELINE_ROOT:  Root directory for system test baseline files -->
   <BASELINE_ROOT>$ENV{HOME}/projects/baselines</BASELINE_ROOT>
 
+  <CCSM_CPRNC>/Users/sacks/cprnc_builds/cprnc_v1.1.0-4-gf4979ab</CCSM_CPRNC>
+
   <!-- GMAKE: gnu compatible make tool, default is 'gmake' -->
   <GMAKE>gmake</GMAKE>
 
