@@ -98,7 +98,7 @@
   </environment_variables>
   <environment_variables mpilib="mpi-serial">
     <!-- The following is needed in the share unit test build -->
-    <env name="MPISERIAL_ROOT">/Users/sacks/mpi-serial_builds/MPIserial_2.5.2</env>
+    <env name="MPISERIAL">/Users/sacks/mpi-serial_builds/MPIserial_2.5.2</env>
     <!-- The following variables are needed in order to use a pre-built PIO (which is the
     recommendation now, though may not actually be needed) -->
     <env name="PIO">/Users/sacks/pio_builds/pio2_6_5_mpiserial</env>
