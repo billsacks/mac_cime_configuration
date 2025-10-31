@@ -10,10 +10,6 @@ string(APPEND LDFLAGS " -L/opt/homebrew/lib -lnetcdff -lnetcdf")
 
 # Trying to produce a backtrace leads to a hang, so don't even try
 string(APPEND CFLAGS " -fno-backtrace -Wno-error=implicit-function-declaration")
-# (2023-04-19) The addition of -fallow-argument-mismatch was needed to get some unit tests
-# to build. I'm not sure why that's needed given that it appears to already be added by
-# the standard gnu.cmake.
-string(APPEND FFLAGS " -fno-backtrace -fallow-argument-mismatch")
 
 # This is needed to run the Fortran unit tests;
 # this isn't needed to build and run CESM.
